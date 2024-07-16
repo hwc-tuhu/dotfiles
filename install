@@ -13,6 +13,17 @@ fi
 ln -s ${PWD}/tmux.conf "$fname"
 echo "Symbolic link '$fname' created."
 
+dname="$HOME/.config/tmux-powerline"
+if [ -d "$dname" ]; then
+    rm -r "$dname"
+    echo "Dir '$dname' deleted."
+else
+    echo "Dir '$dname' does not exist."
+fi
+ln -s ${PWD}/config/tmux-powerline "$dname"
+echo "Symbolic link '$dname' created."
+
+
 
 dname="$HOME/.config/nvim"
 if [ -d "$dname" ]; then
