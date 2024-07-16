@@ -10,6 +10,9 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
+-- don't change terminal cursor?
+vim.opt.guicursor = ""
+
 -- what's this option, how does it
 -- interact with tmux and X selections
 vim.opt.clipboard = "unnamedplus"
