@@ -2,7 +2,9 @@
 BASEDIR=$(dirname $0)
 cd $BASEDIR
 
+rm ~/.tmux.conf
 ln -s ${PWD}/tmux.conf ~/.tmux.conf
 
-ln -s ${PWD}/nvim ~/nvim
+rm -r ~/.config/nvim
+ln -s ${PWD}/config/nvim ~/.config/nvim
 
