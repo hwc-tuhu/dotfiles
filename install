@@ -2,9 +2,25 @@
 BASEDIR=$(dirname $0)
 cd $BASEDIR
 
-rm ~/.tmux.conf
-ln -s ${PWD}/tmux.conf ~/.tmux.conf
 
-rm -r ~/.config/nvim
-ln -s ${PWD}/config/nvim ~/.config/nvim
+fname="$HOME/.tmux.conf"
+if [ -e "$fname" ]; then
+    rm "$fname"
+    echo "File '$fname' deleted."
+else
+    echo "File '$fname' does not exist."
+fi
+ln -s ${PWD}/tmux.conf "$fname"
+echo "Symbolic link '$fname' created."
+
+
+dname="$HOME/.config/nvim"
+if [ -d "$dname" ]; then
+    rm -r "$dname"
+    echo "Dir '$dname' deleted."
+else
+    echo "Dir '$dname' does not exist."
+fi
+ln -s ${PWD}/config/nvim "$dname"
+echo "Symbolic link '$dname' created."
 
