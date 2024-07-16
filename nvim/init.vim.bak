@@ -1,0 +1,79 @@
+" Neovim configuration
+"
+" Main outer sources:
+"   MIT missing semester
+
+
+" Not loading these providers.
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0
+
+
+"==============================
+
+"====Display===================
+
+" Switch wrapping off.
+set nowrap
+
+" Show the spaces and tabs as highlighted characters.
+set list
+set listchars=tab:>-,trail:-
+
+" Show line numbers.
+set number
+" This enables relative line numbering mode. With both number and
+" relativenumber enabled, the current line shows the true line number, while
+" all other lines (above and below) are numbered relative to the current line.
+set relativenumber
+
+
+
+"====UI========================
+
+" Enable mouse support. You should avoid relying on this too much, but it can
+" sometimes be convenient.
+set mouse+=a
+
+
+
+"====Move======================
+
+" Try to prevent bad habits like using the arrow keys for movement.
+" Do this in normal mode...
+nnoremap <Left>  :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+" ...and in insert mode
+inoremap <Left>  <ESC>:echoe "Use h"<CR>
+inoremap <Right> <ESC>:echoe "Use l"<CR>
+inoremap <Up>    <ESC>:echoe "Use k"<CR>
+inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+" Scroll window with the cursor, similar to <C-U/D> but one line a time.
+nnoremap <C-K> k<C-Y>
+nnoremap <C-J> j<C-E>
+
+
+
+"====Searching=================
+
+" This setting makes search case-insensitive when all characters in the string
+" being searched are lowercase. However, the search becomes case-sensitive if
+" it contains any capital letters. This makes searching more convenient.
+" Can always use \c and \C at end of the pattern to overide this setting
+" temporarily.
+set ignorecase
+set smartcase
+
+
+
+"====Multiple-editing==========
+
+" Close tab.
+map <C-F4> <ESC>:tabclose<CR>
+
+
+
+
